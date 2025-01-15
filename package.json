@@ -6,6 +6,10 @@
   "engines": {
     "vscode": "^1.96.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrelcol/code-analyzer-js.git"
+  },
   "categories": [
     "Other"
   ],
