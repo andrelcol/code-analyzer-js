@@ -1,71 +1,87 @@
-# code-analyzer-js README
 
-This is the README for your extension "code-analyzer-js". After writing up a brief description, we recommend including the following sections.
+# **Code Analyzer JS**
 
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+**Code Analyzer JS** is a Visual Studio Code extension that analyzes and suggests optimizations for JavaScript code. It identifies patterns such as redundant loops and recommends more efficient alternatives, like using higher-order functions (`map`, `filter`). The extension also comments the original code to preserve it.
 
 ---
 
-## Following extension guidelines
+## **Features**
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+- Detects `for` loops and recommends replacements with higher-order functions.
+- Automatically comments the old code and inserts the optimized version.
+- Integrates with the VS Code problems panel to display optimization suggestions.
+- Easy to use, with commands triggered directly from the editor.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+### **Example Usage**
 
-## Working with Markdown
+Original Code:
+```javascript
+const result = [];
+for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+        result.push(array[i]);
+    }
+}
+```
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+After analysis:
+```javascript
+// const result = [];
+// for (let i = 0; i < array.length; i++) {
+//     if (array[i] % 2 === 0) {
+//         result.push(array[i]);
+//     }
+// }
+array.filter(x => x % 2);
+```
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+---
 
-## For more information
+## **Requirements**
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- Visual Studio Code `^1.96.0`.
+- Node.js environment set up.
 
-**Enjoy!**
+---
+
+## **Commands**
+
+### Main Command:
+- **`Code Analyzer: Analyze Code`**
+  - Triggered when opening JavaScript files or pressing `Ctrl+Shift+P` and selecting the command.
+
+---
+
+## **Extension Settings**
+
+No additional settings are required for this version. The extension works automatically when opening `.js` files.
+
+---
+
+## **Known Issues**
+
+- **Partial Code:** The analysis may be imprecise for incomplete or malformed code.
+- **Limited Compatibility:** Currently supports only plain JavaScript and does not integrate with TypeScript.
+
+---
+
+## **Release Notes**
+
+### **1.0.0**
+- Initial stable release:
+  - Detects `for` loops.
+  - Suggests replacements with `map` and `filter`.
+  - Automatically comments old code.
+
+---
+
+## **Contributing**
+
+Feedback and contributions are welcome! To report issues or suggest improvements, visit the [GitHub repository](https://github.com/andrelcol/code-analyzer-js/issues).
+
+---
+
+## **References**
+
+- [VS Code Extension Guide](https://code.visualstudio.com/api)
+- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
