@@ -3,7 +3,7 @@
   "publisher": "andrelcol",
   "displayName": "CodeAnalyzerJS",
   "description": "Análise e sugestões de otimização para código JavaScript",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.96.0"
   },
