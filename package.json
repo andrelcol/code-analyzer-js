@@ -1,5 +1,6 @@
 {
   "name": "code-analyzer-js",
+  "publisher": "andrelcol",
   "displayName": "CodeAnalyzerJS",
   "description": "Análise e sugestões de otimização para código JavaScript",
   "version": "0.0.1",
